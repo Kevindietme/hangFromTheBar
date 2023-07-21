@@ -1,4 +1,5 @@
 import { db } from "./dbConnect.js";
+import fido from "./exercises.js";
 const coll = db.collection('exercises');
 
 const toArray = (collection) => collection.docs.map(doc => ({ id: doc.id, ...doc.data() }))
@@ -7,7 +8,8 @@ const toArray = (collection) => collection.docs.map(doc => ({ id: doc.id, ...doc
 export async function getAllExercises(req, res) {
   try {
     const allExercises = await coll.get();
-    res.send(toArray(allExercises));
+    //res.send(toArray(allExercises));
+    res.send(fido)
   } catch (err) {
     res.status(500).send(err);
   }
