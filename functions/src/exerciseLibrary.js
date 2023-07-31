@@ -7,8 +7,6 @@ const toArray = (collection) => collection.docs.map(doc => ({ id: doc.id, ...doc
 //get(retrieve) all exercises
 export async function getAllExercises(req, res) {
   try {
-    const allExercises = await coll.get();
-    //res.send(toArray(allExercises));
     res.send(fido)
   } catch (err) {
     res.status(500).send(err);
