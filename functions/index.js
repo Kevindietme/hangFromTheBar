@@ -20,9 +20,5 @@ app.patch("/exercise/:exerciseId", updateExerciseById);
 app.get("/exercise-results", getAllResults);
 app.post("/exercise-results", addResults);
 
-app.listen(PORT, () => {
-  console.log(`Listening on http://localhost:${PORT}`)
-})
-
 export const api = onRequest(app)
 
